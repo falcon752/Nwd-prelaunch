@@ -1,4 +1,66 @@
 import './App.css'
+import { useState, useEffect } from 'react'
+
+function CountdownTimer() {
+  const [countdown, setCountdown] = useState({
+    months: 0,
+    weeks: 0,
+    days: 0,
+    hours: 0
+  })
+
+  useEffect(() => {
+    // Set a target date 3 months from now
+    const targetDate = new Date()
+    targetDate.setMonth(targetDate.getMonth() + 3)
+
+    const timer = setInterval(() => {
+      const now = new Date()
+      const difference = targetDate - now
+
+      if (difference > 0) {
+        const totalSeconds = Math.floor(difference / 1000)
+        const totalMinutes = Math.floor(totalSeconds / 60)
+        const totalHours = Math.floor(totalMinutes / 60)
+        const totalDays = Math.floor(totalHours / 24)
+        
+        const months = Math.floor(totalDays / 30)
+        const weeks = Math.floor((totalDays % 30) / 7)
+        const days = totalDays % 7
+        const hours = totalHours % 24
+
+        setCountdown({ months, weeks, days, hours })
+      } else {
+        setCountdown({ months: 0, weeks: 0, days: 0, hours: 0 })
+        clearInterval(timer)
+      }
+    }, 1000)
+
+    return () => clearInterval(timer)
+  }, [])
+
+  return (
+    <div className="countdown-display">
+      <div className="countdown-item">
+        <span className="countdown-number">{countdown.months}</span>
+        <span className="countdown-label">Months</span>
+      </div>
+      <div className="countdown-item">
+        <span className="countdown-number">{countdown.weeks}</span>
+        <span className="countdown-label">Weeks</span>
+      </div>
+      <div className="countdown-item">
+        <span className="countdown-number">{countdown.days}</span>
+        <span className="countdown-label">Days</span>
+      </div>
+      <div className="countdown-item">
+        <span className="countdown-number">{countdown.hours}</span>
+        <span className="countdown-label">Hours</span>
+      </div>
+    </div>
+  )
+}
+
 function App() {
   return (
     <>
@@ -36,25 +98,25 @@ function App() {
                     </a>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#about">About Us</a>
+                    <a href="#about">Events</a>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#services">Services</a>
+                    <a href="#services">Places</a>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#portfolio">Portfolio</a>
+                    <a href="#portfolio">Updates</a>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#blog">Blog</a>
+                    <a href="#blog">Privacy</a>
                   </li>
                   <li className="scroll-to-section">
-                    <a href="#contact">Message Us</a>
+                    <a href="#term">Terms</a>
                   </li>
-                  <li className="scroll-to-section">
+                  {/* <li className="scroll-to-section">
                     <div className="main-red-button">
                       <a href="#contact">Contact Now</a>
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
                 <a className="menu-trigger">
                   <span>Menu</span>
@@ -75,34 +137,22 @@ function App() {
                   <div className="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                     <h6>Welcome to NaijaWetinDey</h6>
                     <h2>
-                      We Make <em>Digital Ideas</em> &amp; <span>SEO</span> Marketing
+                      Your <span></span><em>Local Pulse</em> in Nigeria
+                      <span></span>
+
                     </h2>
                     <p>
-                      NaijaWetinDey is your go-to digital crew for bold ideas, SEO growth, and campaigns that hit
-                      home. Let&apos;s build the next big thing together.
+                      Find events, places, and updates happening right around you.
                     </p>
-                    <form id="search" action="#" method="GET">
-                      <fieldset>
-                        <input
-                          type="text"
-                          name="address"
-                          className="email"
-                          placeholder="Your website URL..."
-                          autoComplete="on"
-                          required
-                        />
-                      </fieldset>
-                      <fieldset>
-                        <button type="submit" className="main-button">
-                          Analyze Site
-                        </button>
-                      </fieldset>
-                    </form>
+                    <div className="left-content countdown-wrapper">
+                      <h5 className="countdown-title">Launching in</h5>
+                      <CountdownTimer />
+                    </div>
                   </div>
                 </div>
                 <div className="col-lg-6">
                   <div className="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <img src="/assets/images/banner-right-image.png" alt="team meeting" />
+                    <img src="/assets/images/hero-image.png" alt="team meeting" />
                   </div>
                 </div>
               </div>
