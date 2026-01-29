@@ -1,16 +1,7 @@
+@import "tailwindcss";
+
 :root {
   font-family: 'Poppins', sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: #ffffff;
-  color: #1f1f1f;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
 }
 
 body {
@@ -19,8 +10,11 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: #ffffff;
-  color: #1f1f1f;
+  color: #111827;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {

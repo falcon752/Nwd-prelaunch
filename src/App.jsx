@@ -65,96 +65,95 @@ function App() {
   return (
     <>
       {/* Preloader */}
-      <div id="js-preloader" className="js-preloader">
-        <div className="preloader-inner">
-          <span className="dot" />
-          <div className="dots">
-            <span />
-            <span />
-            <span />
+      <div id="js-preloader" className="fixed inset-0 z-[9999] flex items-center justify-center bg-white">
+        <div className="relative">
+          <span className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary block animate-pulse" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-2">
+            <span className="w-2 h-2 rounded-full bg-white animate-bounce" />
+            <span className="w-2 h-2 rounded-full bg-white animate-bounce [animation-delay:0.2s]" />
+            <span className="w-2 h-2 rounded-full bg-white animate-bounce [animation-delay:0.4s]" />
           </div>
         </div>
       </div>
 
       {/* Header */}
       <header
-        className="header-area header-sticky wow slideInDown"
+        className="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300"
         data-wow-duration="0.75s"
         data-wow-delay="0s"
       >
-        <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <nav className="main-nav">
-                <a href="#top" className="logo">
-                  <h4>
-                    Naija<span>WetinDey</span>
-                  </h4>
-                </a>
-                <ul className="nav">
-                  <li className="scroll-to-section">
-                    <a href="#top" className="active">
-                      Home
-                    </a>
-                  </li>
-                  <li className="scroll-to-section">
-                    <a href="#about">Events</a>
-                  </li>
-                  <li className="scroll-to-section">
-                    <a href="#services">Places</a>
-                  </li>
-                  <li className="scroll-to-section">
-                    <a href="#portfolio">Updates</a>
-                  </li>
-                  <li className="scroll-to-section">
-                    <a href="#blog">Privacy</a>
-                  </li>
-                  <li className="scroll-to-section">
-                    <a href="#term">Terms</a>
-                  </li>
-                  {/* <li className="scroll-to-section">
-                    <div className="main-red-button">
-                      <a href="#contact">Contact Now</a>
-                    </div>
-                  </li> */}
-                </ul>
-                <a className="menu-trigger">
-                  <span>Menu</span>
-                </a>
-              </nav>
-            </div>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between py-4">
+            <nav className="flex items-center justify-between w-full">
+              <a href="#top" className="text-2xl font-bold">
+                <h4 className="text-gray-800">
+                  Naija<span className="text-primary">WetinDey</span>
+                </h4>
+              </a>
+              <ul className="hidden lg:flex items-center gap-8">
+                <li>
+                  <a href="#top" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
+                    Events
+                  </a>
+                </li>
+                <li>
+                  <a href="#services" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
+                    Places
+                  </a>
+                </li>
+                <li>
+                  <a href="#portfolio" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
+                    Updates
+                  </a>
+                </li>
+                <li>
+                  <a href="#blog" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a href="#term" className="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">
+                    Terms
+                  </a>
+                </li>
+              </ul>
+              <button className="lg:hidden flex flex-col gap-1.5 p-2">
+                <span className="w-6 h-0.5 bg-gray-800 block"></span>
+                <span className="w-6 h-0.5 bg-gray-800 block"></span>
+                <span className="w-6 h-0.5 bg-gray-800 block"></span>
+              </button>
+            </nav>
           </div>
         </div>
       </header>
 
       {/* Hero */}
-      <div className="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="row">
-                <div className="col-lg-6 align-self-center">
-                  <div className="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-                    <h6>Welcome to NaijaWetinDey</h6>
-                    <h2>
-                      Your <span></span><em>Local Pulse</em> in Nigeria
-                      <span></span>
-
-                    </h2>
-                    <p>
-                      Find events, places, and updates happening right around you.
-                    </p>
-                    <div className="left-content countdown-wrapper">
-                      <h5 className="countdown-title">Launching in</h5>
-                      <CountdownTimer />
-                    </div>
-                  </div>
+      <div className="pt-24 pb-16 lg:pt-32 lg:pb-24 bg-gradient-to-b from-gray-50 to-white" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="space-y-6" data-wow-duration="1s" data-wow-delay="1s">
+                <h6 className="text-primary font-semibold text-sm uppercase tracking-wider">Welcome to NaijaWetinDey</h6>
+                <h2 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
+                  Your <span className="text-primary">Local Pulse</span> in Nigeria
+                </h2>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  Find events, places, and updates happening right around you.
+                </p>
+                <div className="countdown-wrapper">
+                  <h5 className="countdown-title">Launching in</h5>
+                  <CountdownTimer />
                 </div>
-                <div className="col-lg-6">
-                  <div className="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <img src="/assets/images/hero-image.png" alt="team meeting" />
-                  </div>
-                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="relative" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="/assets/images/hero-image.png" alt="team meeting" className="w-full h-auto rounded-2xl shadow-2xl" />
               </div>
             </div>
           </div>
@@ -162,58 +161,58 @@ function App() {
       </div>
 
       {/* About */}
-      <div id="about" className="about-us section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4">
-              <div className="left-image wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <img src="/assets/images/about-left-image.png" alt="person graphic" />
+      <div id="about" className="py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
+            <div className="lg:col-span-4">
+              <div className="relative" data-wow-duration="1s" data-wow-delay="0.2s">
+                <img src="/assets/images/about-left-image.png" alt="person graphic" className="w-full h-auto rounded-2xl" />
               </div>
             </div>
-            <div className="col-lg-8 align-self-center">
-              <div className="services">
-                <div className="row">
-                  <div className="col-lg-6">
-                    <div className="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
-                      <div className="icon">
-                        <img src="/assets/images/service-icon-01.png" alt="reporting" />
+            <div className="lg:col-span-8 flex items-center">
+              <div className="w-full">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300" data-wow-duration="1s" data-wow-delay="0.5s">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <img src="/assets/images/service-icon-01.png" alt="reporting" className="w-16 h-16" />
                       </div>
-                      <div className="right-text">
-                        <h4>Data Analysis</h4>
-                        <p>Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-6">
-                    <div className="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.7s">
-                      <div className="icon">
-                        <img src="/assets/images/service-icon-02.png" alt="data reporting" />
-                      </div>
-                      <div className="right-text">
-                        <h4>Data Reporting</h4>
-                        <p>Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900 mb-2">Data Analysis</h4>
+                        <p className="text-gray-600">Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-6">
-                    <div className="item wow fadeIn" data-wow-duration="1s" data-wow-delay="0.9s">
-                      <div className="icon">
-                        <img src="/assets/images/service-icon-03.png" alt="web analytics" />
+                  <div className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300" data-wow-duration="1s" data-wow-delay="0.7s">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <img src="/assets/images/service-icon-02.png" alt="data reporting" className="w-16 h-16" />
                       </div>
-                      <div className="right-text">
-                        <h4>Web Analytics</h4>
-                        <p>Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900 mb-2">Data Reporting</h4>
+                        <p className="text-gray-600">Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-6">
-                    <div className="item wow fadeIn" data-wow-duration="1s" data-wow-delay="1.1s">
-                      <div className="icon">
-                        <img src="/assets/images/service-icon-04.png" alt="seo suggestions" />
+                  <div className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300" data-wow-duration="1s" data-wow-delay="0.9s">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <img src="/assets/images/service-icon-03.png" alt="web analytics" className="w-16 h-16" />
                       </div>
-                      <div className="right-text">
-                        <h4>SEO Suggestions</h4>
-                        <p>Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900 mb-2">Web Analytics</h4>
+                        <p className="text-gray-600">Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300" data-wow-duration="1s" data-wow-delay="1.1s">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0">
+                        <img src="/assets/images/service-icon-04.png" alt="seo suggestions" className="w-16 h-16" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-bold text-gray-900 mb-2">SEO Suggestions</h4>
+                        <p className="text-gray-600">Lorem ipsum dolor sit amet, ctetur aoi adipiscing eliter</p>
                       </div>
                     </div>
                   </div>
@@ -225,47 +224,52 @@ function App() {
       </div>
 
       {/* Services */}
-      <div id="services" className="our-services section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
-              <div className="left-image">
-                <img src="/assets/images/services-left-image.png" alt="services" />
+      <div id="services" className="py-16 lg:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="order-2 lg:order-1" data-wow-duration="1s" data-wow-delay="0.2s">
+              <div className="relative">
+                <img src="/assets/images/services-left-image.png" alt="services" className="w-full h-auto rounded-2xl shadow-xl" />
               </div>
             </div>
-            <div className="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
-              <div className="section-heading">
-                <h2>
-                  Grow your website with our <em>SEO</em> service &amp; <span>Project</span> Ideas
-                </h2>
-                <p>
-                  NaijaWetinDey ships clear insights and practical campaigns. We keep the hustle lean, the stories bold,
-                  and the results measurable.
-                </p>
-              </div>
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="first-bar progress-skill-bar">
-                    <h4>Website Analysis</h4>
-                    <span>84%</span>
-                    <div className="filled-bar" />
-                    <div className="full-bar" />
-                  </div>
+            <div className="order-1 lg:order-2" data-wow-duration="1s" data-wow-delay="0.2s">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">
+                    Grow your website with our <em className="text-primary not-italic">SEO</em> service &amp; <span className="text-secondary">Project</span> Ideas
+                  </h2>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    NaijaWetinDey ships clear insights and practical campaigns. We keep the hustle lean, the stories bold,
+                    and the results measurable.
+                  </p>
                 </div>
-                <div className="col-lg-12">
-                  <div className="second-bar progress-skill-bar">
-                    <h4>SEO Reports</h4>
-                    <span>88%</span>
-                    <div className="filled-bar" />
-                    <div className="full-bar" />
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-gray-900">Website Analysis</h4>
+                      <span className="text-primary font-bold">84%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                      <div className="bg-gradient-to-r from-primary to-secondary h-full rounded-full" style={{width: '84%'}}></div>
+                    </div>
                   </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="third-bar progress-skill-bar">
-                    <h4>Page Optimizations</h4>
-                    <span>94%</span>
-                    <div className="filled-bar" />
-                    <div className="full-bar" />
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-gray-900">SEO Reports</h4>
+                      <span className="text-primary font-bold">88%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                      <div className="bg-gradient-to-r from-primary to-secondary h-full rounded-full" style={{width: '88%'}}></div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-semibold text-gray-900">Page Optimizations</h4>
+                      <span className="text-primary font-bold">94%</span>
+                    </div>
+                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                      <div className="bg-gradient-to-r from-primary to-secondary h-full rounded-full" style={{width: '94%'}}></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -275,176 +279,154 @@ function App() {
       </div>
 
       {/* Portfolio */}
-      <div id="portfolio" className="our-portfolio section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 offset-lg-3">
-              <div className="section-heading  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
-                <h2>
-                  See What Our Agency <em>Offers</em> &amp; What We <span>Provide</span>
-                </h2>
-              </div>
-            </div>
+      <div id="portfolio" className="py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-12" data-wow-duration="1s" data-wow-delay="0.2s">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              See What Our Agency <em className="text-primary not-italic">Offers</em> &amp; What We <span className="text-secondary">Provide</span>
+            </h2>
           </div>
-          <div className="row">
-            <div className="col-lg-3 col-sm-6">
-              <a href="#">
-                <div className="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
-                  <div className="hidden-content">
-                    <h4>SEO Analysis</h4>
-                    <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
-                  </div>
-                  <div className="showed-content">
-                    <img src="/assets/images/portfolio-image.png" alt="portfolio SEO" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <a href="#" className="group">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300" data-wow-duration="1s" data-wow-delay="0.3s">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center p-6">
+                  <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-xl font-bold mb-2">SEO Analysis</h4>
+                    <p className="text-sm">Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
                   </div>
                 </div>
-              </a>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <a href="#">
-                <div className="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
-                  <div className="hidden-content">
-                    <h4>Website Reporting</h4>
-                    <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
-                  </div>
-                  <div className="showed-content">
-                    <img src="/assets/images/portfolio-image.png" alt="portfolio reporting" />
+                <img src="/assets/images/portfolio-image.png" alt="portfolio SEO" className="w-full h-auto" />
+              </div>
+            </a>
+            <a href="#" className="group">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300" data-wow-duration="1s" data-wow-delay="0.4s">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center p-6">
+                  <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-xl font-bold mb-2">Website Reporting</h4>
+                    <p className="text-sm">Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
                   </div>
                 </div>
-              </a>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <a href="#">
-                <div className="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <div className="hidden-content">
-                    <h4>Performance Tests</h4>
-                    <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
-                  </div>
-                  <div className="showed-content">
-                    <img src="/assets/images/portfolio-image.png" alt="portfolio performance" />
+                <img src="/assets/images/portfolio-image.png" alt="portfolio reporting" className="w-full h-auto" />
+              </div>
+            </a>
+            <a href="#" className="group">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300" data-wow-duration="1s" data-wow-delay="0.5s">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center p-6">
+                  <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-xl font-bold mb-2">Performance Tests</h4>
+                    <p className="text-sm">Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
                   </div>
                 </div>
-              </a>
-            </div>
-            <div className="col-lg-3 col-sm-6">
-              <a href="#">
-                <div className="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
-                  <div className="hidden-content">
-                    <h4>Data Analysis</h4>
-                    <p>Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
-                  </div>
-                  <div className="showed-content">
-                    <img src="/assets/images/portfolio-image.png" alt="portfolio data" />
+                <img src="/assets/images/portfolio-image.png" alt="portfolio performance" className="w-full h-auto" />
+              </div>
+            </a>
+            <a href="#" className="group">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300" data-wow-duration="1s" data-wow-delay="0.6s">
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 flex items-center justify-center p-6">
+                  <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h4 className="text-xl font-bold mb-2">Data Analysis</h4>
+                    <p className="text-sm">Lorem ipsum dolor sit ameti ctetur aoi adipiscing eto.</p>
                   </div>
                 </div>
-              </a>
-            </div>
+                <img src="/assets/images/portfolio-image.png" alt="portfolio data" className="w-full h-auto" />
+              </div>
+            </a>
           </div>
         </div>
       </div>
 
       {/* Blog */}
-      <div id="blog" className="our-blog section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
-              <div className="section-heading">
-                <h2>
-                  Check Out What Is <em>Trending</em> In Our Latest <span>News</span>
-                </h2>
-              </div>
+      <div id="blog" className="py-16 lg:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 items-center mb-12">
+            <div data-wow-duration="1s" data-wow-delay="0.25s">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+                Check Out What Is <em className="text-primary not-italic">Trending</em> In Our Latest <span className="text-secondary">News</span>
+              </h2>
             </div>
-            <div className="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
-              <div className="top-dec">
-                <img src="/assets/images/blog-dec.png" alt="decoration" />
-              </div>
+            <div className="flex justify-end" data-wow-duration="1s" data-wow-delay="0.25s">
+              <img src="/assets/images/blog-dec.png" alt="decoration" className="max-w-xs" />
             </div>
           </div>
-          <div className="row">
-            <div className="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
-              <div className="left-image">
-                <a href="#">
-                  <img src="/assets/images/big-blog-thumb.jpg" alt="workspace desktop" />
-                </a>
-                <div className="info">
-                  <div className="inner-content">
-                    <ul>
-                      <li>
-                        <i className="fa fa-calendar" /> 24 Mar 2021
-                      </li>
-                      <li>
-                        <i className="fa fa-users" /> NaijaWetinDey
-                      </li>
-                      <li>
-                        <i className="fa fa-folder" /> Branding
-                      </li>
-                    </ul>
-                    <a href="#">
-                      <h4>SEO Agency &amp; Digital Marketing</h4>
-                    </a>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et
-                      dolore magna...
-                    </p>
-                    <div className="main-blue-button">
-                      <a href="#">Discover More</a>
-                    </div>
-                  </div>
+          <div className="grid lg:grid-cols-2 gap-8">
+            <div className="space-y-6" data-wow-duration="1s" data-wow-delay="0.25s">
+              <a href="#" className="block group">
+                <div className="relative overflow-hidden rounded-2xl shadow-lg">
+                  <img src="/assets/images/big-blog-thumb.jpg" alt="workspace desktop" className="w-full h-auto group-hover:scale-110 transition-transform duration-500" />
                 </div>
-              </div>
-            </div>
-            <div className="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
-              <div className="right-list">
-                <ul>
-                  <li>
-                    <div className="left-content align-self-center">
-                      <span>
-                        <i className="fa fa-calendar" /> 18 Mar 2021
-                      </span>
-                      <a href="#">
-                        <h4>New Websites &amp; Backlinks</h4>
-                      </a>
-                      <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
-                    </div>
-                    <div className="right-image">
-                      <a href="#">
-                        <img src="/assets/images/blog-thumb-01.jpg" alt="new websites" />
-                      </a>
-                    </div>
+              </a>
+              <div className="bg-white p-8 rounded-2xl shadow-lg">
+                <ul className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+                  <li className="flex items-center gap-2">
+                    <i className="fa fa-calendar text-primary" /> 24 Mar 2021
                   </li>
-                  <li>
-                    <div className="left-content align-self-center">
-                      <span>
-                        <i className="fa fa-calendar" /> 14 Mar 2021
-                      </span>
-                      <a href="#">
-                        <h4>SEO Analysis &amp; Content Ideas</h4>
-                      </a>
-                      <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
-                    </div>
-                    <div className="right-image">
-                      <a href="#">
-                        <img src="/assets/images/blog-thumb-01.jpg" alt="analysis" />
-                      </a>
-                    </div>
+                  <li className="flex items-center gap-2">
+                    <i className="fa fa-users text-primary" /> NaijaWetinDey
                   </li>
-                  <li>
-                    <div className="left-content align-self-center">
-                      <span>
-                        <i className="fa fa-calendar" /> 06 Mar 2021
-                      </span>
-                      <a href="#">
-                        <h4>SEO Tips &amp; Digital Marketing</h4>
-                      </a>
-                      <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
-                    </div>
-                    <div className="right-image">
-                      <a href="#">
-                        <img src="/assets/images/blog-thumb-01.jpg" alt="seo tips" />
-                      </a>
-                    </div>
+                  <li className="flex items-center gap-2">
+                    <i className="fa fa-folder text-primary" /> Branding
                   </li>
                 </ul>
+                <a href="#" className="group">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">SEO Agency &amp; Digital Marketing</h4>
+                </a>
+                <p className="text-gray-600 mb-6">
+                  Lorem ipsum dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et
+                  dolore magna...
+                </p>
+                <a href="#" className="inline-block bg-gradient-to-r from-primary to-secondary text-white font-semibold px-8 py-3 rounded-full hover:shadow-lg transition-shadow duration-300">
+                  Discover More
+                </a>
+              </div>
+            </div>
+            <div className="space-y-6" data-wow-duration="1s" data-wow-delay="0.25s">
+              <div className="bg-white p-6 rounded-2xl shadow-lg flex gap-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex-1">
+                  <span className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                    <i className="fa fa-calendar text-primary" /> 18 Mar 2021
+                  </span>
+                  <a href="#" className="group">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">New Websites &amp; Backlinks</h4>
+                  </a>
+                  <p className="text-gray-600 text-sm">Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <a href="#" className="block">
+                    <img src="/assets/images/blog-thumb-01.jpg" alt="new websites" className="w-24 h-24 object-cover rounded-lg" />
+                  </a>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-2xl shadow-lg flex gap-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex-1">
+                  <span className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                    <i className="fa fa-calendar text-primary" /> 14 Mar 2021
+                  </span>
+                  <a href="#" className="group">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">SEO Analysis &amp; Content Ideas</h4>
+                  </a>
+                  <p className="text-gray-600 text-sm">Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <a href="#" className="block">
+                    <img src="/assets/images/blog-thumb-01.jpg" alt="analysis" className="w-24 h-24 object-cover rounded-lg" />
+                  </a>
+                </div>
+              </div>
+              <div className="bg-white p-6 rounded-2xl shadow-lg flex gap-6 hover:shadow-xl transition-shadow duration-300">
+                <div className="flex-1">
+                  <span className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                    <i className="fa fa-calendar text-primary" /> 06 Mar 2021
+                  </span>
+                  <a href="#" className="group">
+                    <h4 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">SEO Tips &amp; Digital Marketing</h4>
+                  </a>
+                  <p className="text-gray-600 text-sm">Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div className="flex-shrink-0">
+                  <a href="#" className="block">
+                    <img src="/assets/images/blog-thumb-01.jpg" alt="seo tips" className="w-24 h-24 object-cover rounded-lg" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -452,94 +434,95 @@ function App() {
       </div>
 
       {/* Contact */}
-      <div id="contact" className="contact-us section">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-6 align-self-center wow fadeInLeft" data-wow-duration="0.5s" data-wow-delay="0.25s">
-              <div className="section-heading">
-                <h2>Feel Free To Send Us a Message About Your Website Needs</h2>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut
-                  labore et dolores
-                </p>
-                <div className="phone-info">
-                  <h4>
-                    For any enquiry, Call Us: <span><i className="fa fa-phone" /> <a href="#">010-020-0340</a></span>
-                  </h4>
-                </div>
+      <div id="contact" className="py-16 lg:py-24 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="space-y-6" data-wow-duration="0.5s" data-wow-delay="0.25s">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 leading-tight">Feel Free To Send Us a Message About Your Website Needs</h2>
+              <p className="text-gray-600 text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doer ket eismod tempor incididunt ut
+                labore et dolores
+              </p>
+              <div className="bg-gradient-to-r from-primary to-secondary p-6 rounded-2xl text-white">
+                <h4 className="text-lg font-semibold">
+                  For any enquiry, Call Us: <span className="flex items-center gap-2 mt-2"><i className="fa fa-phone" /> <a href="#" className="hover:underline">010-020-0340</a></span>
+                </h4>
               </div>
             </div>
-            <div className="col-lg-6 wow fadeInRight" data-wow-duration="0.5s" data-wow-delay="0.25s">
-              <form id="contact" action="" method="post">
-                <div className="row">
-                  <div className="col-lg-6">
-                    <fieldset>
-                      <input type="text" name="name" id="name" placeholder="Name" autoComplete="on" required />
-                    </fieldset>
+            <div className="relative" data-wow-duration="0.5s" data-wow-delay="0.25s">
+              <form id="contact" action="" method="post" className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <input 
+                      type="text" 
+                      name="name" 
+                      id="name" 
+                      placeholder="Name" 
+                      autoComplete="on" 
+                      required 
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
                   </div>
-                  <div className="col-lg-6">
-                    <fieldset>
-                      <input
-                        type="text"
-                        name="surname"
-                        id="surname"
-                        placeholder="Surname"
-                        autoComplete="on"
-                        required
-                      />
-                    </fieldset>
-                  </div>
-                  <div className="col-lg-12">
-                    <fieldset>
-                      <input
-                        type="text"
-                        name="email"
-                        id="email"
-                        pattern="[^ @]*@[^ @]*"
-                        placeholder="Your Email"
-                        required
-                      />
-                    </fieldset>
-                  </div>
-                  <div className="col-lg-12">
-                    <fieldset>
-                      <textarea
-                        name="message"
-                        className="form-control"
-                        id="message"
-                        placeholder="Message"
-                        required
-                      />
-                    </fieldset>
-                  </div>
-                  <div className="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" className="main-button ">
-                        Send Message
-                      </button>
-                    </fieldset>
+                  <div>
+                    <input
+                      type="text"
+                      name="surname"
+                      id="surname"
+                      placeholder="Surname"
+                      autoComplete="on"
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
                   </div>
                 </div>
-                <div className="contact-dec">
-                  <img src="/assets/images/contact-decoration.png" alt="contact decoration" />
+                <div>
+                  <input
+                    type="text"
+                    name="email"
+                    id="email"
+                    pattern="[^ @]*@[^ @]*"
+                    placeholder="Your Email"
+                    required
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    name="message"
+                    id="message"
+                    placeholder="Message"
+                    required
+                    rows="6"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent resize-none"
+                  />
+                </div>
+                <div>
+                  <button 
+                    type="submit" 
+                    id="form-submit" 
+                    className="w-full bg-gradient-to-r from-primary to-secondary text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105"
+                  >
+                    Send Message
+                  </button>
                 </div>
               </form>
+              <div className="absolute -bottom-8 -right-8 opacity-20 pointer-events-none hidden lg:block">
+                <img src="/assets/images/contact-decoration.png" alt="contact decoration" className="w-32 h-auto" />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Footer */}
-      <footer>
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
-              <p>
-                © 2026 NaijaWetinDey. All Rights Reserved.
-                <br />
-                Design: <a rel="nofollow" href="https://templatemo.com">TemplateMo</a>
-              </p>
-            </div>
+      <footer className="bg-gray-900 py-8">
+        <div className="container mx-auto px-4">
+          <div className="text-center" data-wow-duration="1s" data-wow-delay="0.25s">
+            <p className="text-gray-400">
+              © 2026 NaijaWetinDey. All Rights Reserved.
+              <br />
+              Design: <a rel="nofollow" href="https://templatemo.com" className="text-primary hover:text-secondary transition-colors">TemplateMo</a>
+            </p>
           </div>
         </div>
       </footer>
