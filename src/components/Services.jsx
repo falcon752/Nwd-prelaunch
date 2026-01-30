@@ -1,54 +1,44 @@
 function Services() {
+  const services = [
+    {
+      title: "Connects",
+      image: "/assets/images/connect.png",
+    },
+    {
+      title: "Local Hangouts",
+      image: "/assets/images/local.png",
+    },
+    {
+      title: "Events",
+      image: "/assets/images/event.png",
+    },
+  ];
+
   return (
-    <div id="services" className="our-services section">
+    <section id="services" className="services-grid section">
       <div className="container">
-        <div className="row">
-          <div className="col-lg-6 align-self-center  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.2s">
-            <div className="left-image">
-              <img src="/assets/images/services-left-image.png" alt="services" />
-            </div>
-          </div>
-          <div className="col-lg-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.2s">
-            <div className="section-heading">
-              <h2>
-                Grow your website with our <em>SEO</em> service &amp; <span>Project</span> Ideas
-              </h2>
-              <p>
-                NaijaWetinDey ships clear insights and practical campaigns. We keep the hustle lean, the stories bold,
-                and the results measurable.
-              </p>
-            </div>
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="first-bar progress-skill-bar">
-                  <h4>Website Analysis</h4>
-                  <span>84%</span>
-                  <div className="filled-bar" />
-                  <div className="full-bar" />
+        <div className="section-heading text-center">
+          <h2>
+            What’s <em>Happening</em> Around <span>You</span>
+          </h2>
+          <p>Discover people, places, and events without the noise.</p>
+        </div>
+
+        <div className="row g-4">
+          {services.map((item, index) => (
+            <div key={index} className="col-lg-4 col-md-6">
+              <div className="service-card">
+                <div className="image-wrapper">
+                  <img src={item.image} alt={item.title} />
                 </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="second-bar progress-skill-bar">
-                  <h4>SEO Reports</h4>
-                  <span>88%</span>
-                  <div className="filled-bar" />
-                  <div className="full-bar" />
-                </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="third-bar progress-skill-bar">
-                  <h4>Page Optimizations</h4>
-                  <span>94%</span>
-                  <div className="filled-bar" />
-                  <div className="full-bar" />
-                </div>
+                <h4>{item.title}</h4>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
-  )
+    </section>
+  );
 }
 
-export default Services
+export default Services;
